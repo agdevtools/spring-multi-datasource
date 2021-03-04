@@ -19,7 +19,7 @@ import javax.sql.DataSource;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(entityManagerFactoryRef = "entityManagerFactory",
-    basePackages = {"com.foobar.foo.repo"})
+    basePackages = {"com.foobar.foo.repo1"})
 public class FooDbConfig {
 
   @Primary

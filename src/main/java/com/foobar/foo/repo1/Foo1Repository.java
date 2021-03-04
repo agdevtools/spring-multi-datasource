@@ -1,5 +1,4 @@
-package com.foobar.bar.repo;
-
+package com.foobar.foo.repo1;
 
 import com.foobar.foo.domain.Foo;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,6 +11,6 @@ public interface Foo1Repository extends JpaRepository<Foo, Long> {
 
     Optional<Foo> findById(Long id);
 
-    Foo save(Foo foo1);
+    Foo save(Foo foo);
 
 }

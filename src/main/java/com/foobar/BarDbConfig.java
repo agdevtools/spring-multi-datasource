@@ -18,7 +18,7 @@ import javax.sql.DataSource;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(entityManagerFactoryRef = "barEntityManagerFactory",
-    transactionManagerRef = "barTransactionManager", basePackages = {"com.foobar.bar.repo"})
+    transactionManagerRef = "barTransactionManager", basePackages = {"com.foobar.foo.repo"})
 public class BarDbConfig {
 
   @Bean(name = "barDataSource")

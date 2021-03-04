@@ -1,6 +1,6 @@
 package com.foobar;
 
-import com.foobar.bar.repo.Foo1Repository;
+import com.foobar.foo.repo1.Foo1Repository;
 import com.foobar.foo.domain.Foo;
 import com.foobar.foo.repo.FooRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +11,12 @@ import java.util.Optional;
 @RestController
 public class FooBarController {
 
+  @Autowired
+  FooRepository fooRepository;
+
+  @Autowired
+  Foo1Repository foo1Repository;
+
   private final FooRepository fooRepo;
   private final Foo1Repository foo1Repo;
 
@@ -19,6 +25,8 @@ public class FooBarController {
     this.fooRepo = fooRepo;
     this.foo1Repo = foo1Repo;
   }
+
+
 
   @RequestMapping("/foobar/{id}")
   public String fooBar(@PathVariable("id") Long id) {
