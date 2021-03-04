@@ -1,6 +1,5 @@
 package com.foobar;
 
-import com.foobar.bar.domain.Foo1;
 import com.foobar.bar.repo.Foo1Repository;
 import com.foobar.foo.domain.Foo;
 import com.foobar.foo.repo.FooRepository;
@@ -24,7 +23,7 @@ public class FooBarController {
   @RequestMapping("/foobar/{id}")
   public String fooBar(@PathVariable("id") Long id) {
     Optional<Foo> foo = fooRepo.findById(id);
-    Optional<Foo1> bar = foo1Repo.findById(id);
+    Optional<Foo> bar = foo1Repo.findById(id);
 
     return "test foobar id";
   }
@@ -37,7 +36,7 @@ public class FooBarController {
   @PostMapping("/foobar/{id}")
   public String makeFooBar(@PathVariable("id") Long id) {
     Foo foo = new Foo(id,"Foo");
-    Foo1 foo1 = new Foo1(id,"Foo");
+    Foo foo1 = new Foo(id,"Foo");
     fooRepo.save(foo);
     foo1Repo.save(foo1);
 
